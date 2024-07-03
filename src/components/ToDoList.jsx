@@ -3,12 +3,12 @@ import { TodosContext } from '../context/TodosProvider';
 import ToDoItem from './ToDoItem';
 
 const ToDoList = () => {
-  const { filter, todos } = useContext(TodosContext);
+  const { state } = useContext(TodosContext);
 
-  const filteredTodos = todos.filter(todo => {
-    if (filter === 'all') return true;
-    if (filter === 'completed' && todo.completed) return true;
-    if (filter === 'active' && !todo.completed) return true;
+  const filteredTodos = state.todos.filter(todo => {
+    if (state.filter === 'all') return true;
+    if (state.filter === 'completed' && todo.completed) return true;
+    if (state.filter === 'active' && !todo.completed) return true;
     return false;
   });
 

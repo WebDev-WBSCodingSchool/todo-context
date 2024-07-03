@@ -2,19 +2,21 @@ import { useContext } from 'react';
 import { TodosContext } from '../context/TodosProvider';
 
 const FilterComponent = () => {
-  const { setFilter } = useContext(TodosContext);
+  const { dispatch, state } = useContext(TodosContext);
 
   return (
     <div className='mb-4 flex space-x-2'>
-      <button onClick={() => setFilter('all')} className='bg-gray-200 px-3 py-1 rounded'>
-        All
-      </button>
-      <button onClick={() => setFilter('active')} className='bg-gray-200 px-3 py-1 rounded'>
-        Active
-      </button>
-      <button onClick={() => setFilter('completed')} className='bg-gray-200 px-3 py-1 rounded'>
-        Completed
-      </button>
+      {['all', 'completed', 'active'].map((filter, i) => (
+        <button
+          key={i}
+          onClick={() => dispatch({ type: 'SET_FILTER', payload: filter })}
+          className={`bg-gray-200 px-3 py-1 rounded capitalize ${
+            state.filter === filter ? 'bg-gray-400' : ''
+          }`}
+        >
+          {filter}
+        </button>
+      ))}
     </div>
   );
 };

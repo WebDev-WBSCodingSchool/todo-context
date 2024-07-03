@@ -2,18 +2,13 @@ import { useState, useContext } from 'react';
 import { TodosContext } from '../context/TodosProvider';
 
 const AddToDo = () => {
-  const { setTodos } = useContext(TodosContext);
+  const { dispatch } = useContext(TodosContext);
   const [newTodo, setNewTodo] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
     if (!newTodo) return;
-
-    setTodos(prevTodos => {
-      const newState = [{ id: Date.now(), text: newTodo, completed: false }, ...prevTodos];
-      localStorage.setItem('todos', JSON.stringify(newState));
-      return newState;
-    });
+    dispatch({ type: 'ADD_TODO', payload: newTodo });
     setNewTodo('');
   };
 
