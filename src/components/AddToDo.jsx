@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { TodosContext } from '../context/TodosProvider';
 
-const AddToDo = ({ setTodos }) => {
+const AddToDo = () => {
+  const { setTodos } = useContext(TodosContext);
   const [newTodo, setNewTodo] = useState('');
 
   const handleSubmit = e => {
