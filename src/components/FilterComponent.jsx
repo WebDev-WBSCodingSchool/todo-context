@@ -1,8 +1,7 @@
-import { useContext } from 'react';
-import { TodosContext } from '../context/TodosProvider';
+import { useToDos } from '@/context';
 
 const FilterComponent = () => {
-  const { dispatch, state } = useContext(TodosContext);
+  const { dispatch, state } = useToDos();
 
   return (
     <div className='mb-4 flex space-x-2'>

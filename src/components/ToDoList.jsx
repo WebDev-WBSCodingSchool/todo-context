@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { TodosContext } from '../context/TodosProvider';
-import ToDoItem from './ToDoItem';
+import { useToDos } from '@/context';
+import { ToDoItem } from '@/components';
 
 const ToDoList = () => {
-  const { state } = useContext(TodosContext);
+  const { state } = useToDos();
 
   const filteredTodos = state.todos.filter(todo => {
     if (state.filter === 'all') return true;

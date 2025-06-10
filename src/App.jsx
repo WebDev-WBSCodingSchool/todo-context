@@ -1,17 +1,15 @@
-import AddToDo from './components/AddToDo';
-import FilterComponent from './components/FilterComponent';
-import ToDoList from './components/ToDoList';
-import TodosProvider from './context/TodosProvider';
+import { ToDosState } from '@/context';
+import { AddToDo, FilterComponent, ToDoList } from '@/components';
 
 const App = () => {
   return (
-    <TodosProvider>
+    <ToDosState>
       <div className='container mx-auto p-4'>
         <AddToDo />
         <FilterComponent />
         <ToDoList />
       </div>
-    </TodosProvider>
+    </ToDosState>
   );
 };
 

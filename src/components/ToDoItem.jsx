@@ -1,8 +1,7 @@
-import { useContext } from 'react';
-import { TodosContext } from '../context/TodosProvider';
+import { useToDos } from '@/context';
 
 const ToDoItem = ({ todo }) => {
-  const { dispatch } = useContext(TodosContext);
+  const { dispatch } = useToDos();
 
   return (
     <li className='flex items-center mb-2'>

@@ -1,6 +1,5 @@
-import { createContext, useReducer } from 'react';
-
-export const TodosContext = createContext();
+import { useReducer } from 'react';
+import { ToDosContext } from './ToDosContext';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -29,10 +28,10 @@ const reducer = (state, action) => {
   }
 };
 
-const TodosProvider = ({ children }) => {
+const ToDosState = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, { filter: 'all', todos: [] });
 
-  return <TodosContext.Provider value={{ state, dispatch }}>{children}</TodosContext.Provider>;
+  return <ToDosContext value={{ state, dispatch }}>{children}</ToDosContext>;
 };
 
-export default TodosProvider;
+export default ToDosState;
