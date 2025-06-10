@@ -1,4 +1,32 @@
 # Thinking in React Workshop
 
-- [Part I](https://learn.wbscodingschool.com/courses/full-stack-web-app/lessons/%f0%9f%a7%a9-thinking-in-react/)
-- [Part II](https://learn.wbscodingschool.com/courses/full-stack-web-app/lessons/%f0%9f%a7%a9-thinking-in-react-ii/)
+- 🧩 Thinking in React I
+- 🧩 Thinking in React II
+- 🧩 ToDo App + Context API
+
+### Directory structure
+
+```
+.
+├── eslint.config.js
+├── index.html
+├── jsconfig.json
+├── package-lock.json
+├── package.json
+├── README.md
+├── src
+│   ├── App.jsx
+│   ├── components
+│   │   ├── AddToDo.jsx
+│   │   ├── FilterComponent.jsx
+│   │   ├── index.js
+│   │   ├── ToDoItem.jsx
+│   │   └── ToDoList.jsx
+│   ├── context
+│   │   ├── index.js
+│   │   ├── ToDosContext.js
+│   │   └── ToDosState.jsx
+│   ├── index.css
+│   └── main.jsx
+└── vite.config.js
+```
